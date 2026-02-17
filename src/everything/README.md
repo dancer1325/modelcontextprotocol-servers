@@ -7,33 +7,51 @@
 | [How It Works](docs/how-it-works.md)**
 
 
-This MCP server attempts to exercise all the features of the MCP protocol. It is not intended to be a useful server, but rather a test server for builders of MCP clients. It implements prompts, tools, resources, sampling, and more to showcase MCP capabilities.
+* == MCP server /
+  * goal
+    * 💡exercise ALL MCP protocol's features💡
+      * -- by -- implementing
+        * prompts
+        * tools
+        * resources
+        * sampling
+        * ...
+  * ❌NOT goal❌
+    * useful server
+  * use cases
+    * test server -- for -- MCP clients builders
 
 ## Tools, Resources, Prompts, and Other Features
 
-A complete list of the registered MCP primitives and other protocol features demonstrated can be found in the [Server Features](docs/features.md) document.
+* [here](docs/features.md)
 
-## Usage with Claude Desktop (uses [stdio Transport](https://modelcontextprotocol.io/specification/2025-03-26/basic/transports#stdio))
+## how to use with
+### Claude Desktop?
 
-Add to your `claude_desktop_config.json`:
+* recommendations
+  * use [stdio Transport](https://modelcontextprotocol.io/specification/2025-03-26/basic/transports#stdio)
 
-```json
-{
-  "mcpServers": {
-    "everything": {
-      "command": "npx",
-      "args": [
-        "-y",
-        "@modelcontextprotocol/server-everything"
-      ]
+* steps
+  * | "claude_desktop_config.json",
+    * add 
+
+  ```json
+  {
+    "mcpServers": {
+      "everything": {
+        "command": "npx",
+        "args": [
+          "-y",
+          "@modelcontextprotocol/server-everything"
+        ]
+      }
     }
   }
-}
-```
+  ```
 
-## Usage with VS Code
+### VS Code?
 
-For quick installation, use of of the one-click install buttons below...
+* TODO: For quick installation, use of of the one-click install buttons below...
 
 [![Install with NPX in VS Code](https://img.shields.io/badge/VS_Code-NPM-0098FF?style=flat-square&logo=visualstudiocode&logoColor=white)](https://insiders.vscode.dev/redirect/mcp/install?name=everything&config=%7B%22command%22%3A%22npx%22%2C%22args%22%3A%5B%22-y%22%2C%22%40modelcontextprotocol%2Fserver-everything%22%5D%7D) [![Install with NPX in VS Code Insiders](https://img.shields.io/badge/VS_Code_Insiders-NPM-24bfa5?style=flat-square&logo=visualstudiocode&logoColor=white)](https://insiders.vscode.dev/redirect/mcp/install?name=everything&config=%7B%22command%22%3A%22npx%22%2C%22args%22%3A%5B%22-y%22%2C%22%40modelcontextprotocol%2Fserver-everything%22%5D%7D&quality=insiders)
 
@@ -42,10 +60,13 @@ For quick installation, use of of the one-click install buttons below...
 For manual installation, you can configure the MCP server using one of these methods:
 
 **Method 1: User Configuration (Recommended)**
-Add the configuration to your user-level MCP configuration file. Open the Command Palette (`Ctrl + Shift + P`) and run `MCP: Open User Configuration`. This will open your user `mcp.json` file where you can add the server configuration.
+Add the configuration to your user-level MCP configuration file
+* Open the Command Palette (`Ctrl + Shift + P`) and run `MCP: Open User Configuration`
+* This will open your user `mcp.json` file where you can add the server configuration.
 
 **Method 2: Workspace Configuration**
-Alternatively, you can add the configuration to a file called `.vscode/mcp.json` in your workspace. This will allow you to share the configuration with others.
+Alternatively, you can add the configuration to a file called `.vscode/mcp.json` in your workspace
+* This will allow you to share the configuration with others.
 
 > For more details about MCP configuration in VS Code, see the [official VS Code MCP documentation](https://code.visualstudio.com/docs/copilot/customization/mcp-servers).
 
@@ -62,7 +83,10 @@ Alternatively, you can add the configuration to a file called `.vscode/mcp.json`
 }
 ```
 
-## Running from source with [HTTP+SSE Transport](https://modelcontextprotocol.io/specification/2024-11-05/basic/transports#http-with-sse) (deprecated as of [2025-03-26](https://modelcontextprotocol.io/specification/2025-03-26/basic/transports))
+## ways to run
+### from source -- with -- [HTTP+SSE Transport](https://modelcontextprotocol.io/specification/2024-11-05/basic/transports#http-with-sse)
+* | [2025-03-26](https://modelcontextprotocol.io/specification/2025-03-26/basic/transports),
+  * ⚠️deprecated⚠️ 
 
 ```shell
 cd src/everything
@@ -70,7 +94,7 @@ npm install
 npm run start:sse
 ```
 
-## Run from source with [Streamable HTTP Transport](https://modelcontextprotocol.io/specification/2025-03-26/basic/transports#streamable-http)
+## from source -- with -- [Streamable HTTP Transport](https://modelcontextprotocol.io/specification/2025-03-26/basic/transports#streamable-http)
 
 ```shell
 cd src/everything
@@ -78,29 +102,22 @@ npm install
 npm run start:streamableHttp
 ```
 
-## Running as an installed package
-### Install 
-```shell
-npm install -g @modelcontextprotocol/server-everything@latest
-````
+### -- as an -- installed package
+* steps
 
-### Run the default (stdio) server
-```shell
-npx @modelcontextprotocol/server-everything
-```
-
-### Or specify stdio explicitly
-```shell
-npx @modelcontextprotocol/server-everything stdio
-```
-
-### Run the SSE server
-```shell
-npx @modelcontextprotocol/server-everything sse
-```
-
-### Run the streamable HTTP server
-```shell
-npx @modelcontextprotocol/server-everything streamableHttp
-```
-
+  ```shell
+  # 1. install
+  npm install -g @modelcontextprotocol/server-everything@latest
+  
+  # 2. run stdio server
+  # 2.1 WITHOUT specifying    -- Reason: it's default one --
+  npx @modelcontextprotocol/server-everything
+  # 2.2 specifying it
+  npx @modelcontextprotocol/server-everything stdio
+    
+  # 3. run SSE server
+  npx @modelcontextprotocol/server-everything sse
+  
+  # 4. run the streamable HTTP server
+  npx @modelcontextprotocol/server-everything streamableHttp
+  ````

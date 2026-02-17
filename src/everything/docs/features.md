@@ -1,12 +1,5 @@
 # Everything Server - Features
 
-**[Architecture](architecture.md)
-| [Project Structure](structure.md)
-| [Startup Process](startup.md)
-| Server Features
-| [Extension Points](extension.md)
-| [How It Works](how-it-works.md)**
-
 ## Tools
 
 - `echo` (tools/echo.ts): Echoes the provided `message: string`. Uses Zod to validate inputs.
