@@ -14,12 +14,11 @@
 * recommendations
   * ⚠️implement appropriate safeguards⚠️
 
-The servers in this repository showcase the versatility and extensibility of MCP, demonstrating how it can be used to give Large Language Models (LLMs) secure, controlled access to tools and data sources.
-Typically, each MCP server is implemented with an MCP SDK:
-
-- [C# MCP SDK](https://github.com/modelcontextprotocol/csharp-sdk)
-- [Go MCP SDK](https://github.com/modelcontextprotocol/go-sdk)
-- [Java MCP SDK](https://github.com/modelcontextprotocol/java-sdk)
+- EACH MCP server
+  - (NORMALLY) is implemented -- through -- MCP SDK
+    - [C# MCP SDK](https://github.com/modelcontextprotocol/csharp-sdk)
+    - [Go MCP SDK](https://github.com/modelcontextprotocol/go-sdk)
+    - [Java MCP SDK](https://github.com/modelcontextprotocol/java-sdk)
 - [Kotlin MCP SDK](https://github.com/modelcontextprotocol/kotlin-sdk)
 - [PHP MCP SDK](https://github.com/modelcontextprotocol/php-sdk)
 - [Python MCP SDK](https://github.com/modelcontextprotocol/python-sdk)
